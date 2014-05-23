@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="PaidTimeOff" CodeBehind="PaidTimeOff.master.cs" %>
+
+<%@ Register Assembly="Agency.FrameworkControls" Namespace="Agency.FrameworkControls" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="PaidTimeOff.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table width="100%" id="mainContainer" class="mainContainer">
+        <tr>
+            <td>
+                <table class="header" width="100%">
+                    <tr>
+                        <td>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/face.jpg" />
+                        </td>
+                        <td class="title">
+                            <asp:Label ID="lblHeader" runat="server" Text="Time Management"></asp:Label><br />
+                            <asp:Label ID="lblSubHeader" runat="server" Text="Paid Time Off"></asp:Label>
+                        </td>
+                        <td class="user">
+                            <asp:Label ID="Label1" runat="server" Text="Current User: "></asp:Label>
+                            <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label><br />
+                            <asp:Label ID="lblCurrentDateTime" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <cc1:MenuTabs ID="MenuTabs1" runat="server" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table>
+                    <tr valign="top">
+                        <td class="sideMenu">
+                            <cc1:MenuTree ID="MenuTree1" runat="server" />
+                        </td>
+                        <td class="content">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                Content
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="footer">
+            <td>
+                <asp:Label ID="lblCopyright" runat="server">Copyright &copy 2010 Lana-Soft | </asp:Label><asp:Label
+                    ID="lblVersion" runat="server"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8856EC0D-FDC7-4ABD-BC23-804B79AD6E8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Agency.PaidTimeOffBLL</RootNamespace>
+    <AssemblyName>Agency.PaidTimeOffBLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ENTRoleEO.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Framework\ENTAuditEO.cs" />
+    <Compile Include="Framework\ENTAuditObjectEO.cs" />
+    <Compile Include="Framework\ENTAuditObjectPropertyEO.cs" />
+    <Compile Include="Framework\ENTBaseBO.cs" />
+    <Compile Include="Framework\ENTBaseBOList.cs" />
+    <Compile Include="Framework\ENTBaseEO.cs" />
+    <Compile Include="Framework\ENTBaseEOList.cs" />
+    <Compile Include="Framework\ENTBaseWorkflowEO.cs" />
+    <Compile Include="Framework\ENTCapabilityBO.cs" />
+    <Compile Include="Framework\ENTEmailEO.cs" />
+    <Compile Include="Framework\ENTMenuItemBO.cs" />
+    <Compile Include="Framework\ENTNotificationENTUserAccountEO.cs" />
+    <Compile Include="Framework\ENTNotificationENTWFStateEO.cs" />
+    <Compile Include="Framework\ENTNotificationEO.cs" />
+    <Compile Include="Framework\ENTBaseQueryBO.cs" />
+    <Compile Include="Framework\ENTProperty.cs" />
+    <Compile Include="Framework\ENTRoleCapabilityEO.cs" />
+    <Compile Include="Framework\ENTRoleEO.cs" />
+    <Compile Include="Framework\ENTRoleUserAccountEO.cs" />
+    <Compile Include="Framework\ENTValidationError.cs" />
+    <Compile Include="Framework\ENTUserAccountEO.cs" />
+    <Compile Include="Framework\ENTWFItemEO.cs" />
+    <Compile Include="Framework\ENTWFItemOwnerEO.cs" />
+    <Compile Include="Framework\ENTWFItemStateHistoryEO.cs" />
+    <Compile Include="Framework\ENTWFOwnerGroupEO.cs" />
+    <Compile Include="Framework\ENTWFOwnerGroupUserAccountEO.cs" />
+    <Compile Include="Framework\ENTWFStateEO.cs" />
+    <Compile Include="Framework\ENTWFStatePropertyEO.cs" />
+    <Compile Include="Framework\ENTWFTransitionEO.cs" />
+    <Compile Include="Framework\ENTWorkflowEO.cs" />
+    <Compile Include="Framework\MyNotificationsEO.cs" />
+    <Compile Include="Framework\Reports\ENTReportBO.cs" />
+    <Compile Include="Framework\Reports\ReportAudit.cs" />
+    <Compile Include="Framework\Reports\ReportENTRole.cs" />
+    <Compile Include="Framework\StringHelpers.cs" />
+    <Compile Include="HolidayEO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTODayTypeBO.cs" />
+    <Compile Include="PTORequestEO.cs" />
+    <Compile Include="PTORequestTypeBO.cs" />
+    <Compile Include="PTOVacationBankEO.cs" />
+    <Compile Include="Reports\ReportMyPTORequests.cs" />
+    <Compile Include="Reports\ReportPTORequests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\V2.Common\Common.csproj">
+      <Project>{D0D71825-51CC-40E1-B3BE-E7240ED3870E}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\V2.PaidTimeOffDAL\PaidTimeOffDAL.csproj">
+      <Project>{EEA91A18-A2C1-4C99-940A-F1396E36AA78}</Project>
+      <Name>PaidTimeOffDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

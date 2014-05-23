@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PaidTimeOff.master" AutoEventWireup="false" Inherits="PaidTimeOffEditGrid" Codebehind="PaidTimeOffEditGrid.master.cs" %>
+
+<%@ Register Assembly="Agency.FrameworkControls" Namespace="Agency.FrameworkControls" TagPrefix="cc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+    <script language="javascript" type="text/javascript">
+        function ConfirmDelete()
+        {
+            return confirm("Do you want to permanently delete this item?");        
+        }
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table>
+        <tr>
+            <td>            
+                <cc1:ValidationErrorMessages ID="ValidationErrorMessages1" runat="server" />
+            </td>                     
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="btnAddNew" runat="server" Text="Add New" 
+                    onclick="btnAddNew_Click" />
+            </td>                        
+            <td>
+                <asp:Button ID="btnPrint" runat="server" Text="Print" Visible="false" OnClick="btnPrint_Click" />
+            </td>
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

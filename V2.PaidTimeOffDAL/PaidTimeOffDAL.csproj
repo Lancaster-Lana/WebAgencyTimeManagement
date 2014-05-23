@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEA91A18-A2C1-4C99-940A-F1396E36AA78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Agency.PaidTimeOffDAL</RootNamespace>
+    <AssemblyName>Agency.PaidTimeOffDAL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomizedEntities.cs" />
+    <Compile Include="DuplicateCheck.cs" />
+    <Compile Include="Framework\ENTAuditData.cs" />
+    <Compile Include="Framework\ENTAuditObjectData.cs" />
+    <Compile Include="Framework\ENTAuditObjectPropertyData.cs" />
+    <Compile Include="Framework\ENTBaseData.cs" />
+    <Compile Include="Framework\IENTBaseEntity.cs" />
+    <Compile Include="Framework\ENTBaseQueryData.cs" />
+    <Compile Include="Framework\ENTCapabilityData.cs" />
+    <Compile Include="Framework\ENTEmailData.cs" />
+    <Compile Include="Framework\ENTMenuItemData.cs" />
+    <Compile Include="Framework\ENTNotificationData.cs" />
+    <Compile Include="Framework\ENTNotificationENTUserAccountData.cs" />
+    <Compile Include="Framework\ENTNotificationENTWFStateData.cs" />
+    <Compile Include="Framework\ENTRoleCapabilityData.cs" />
+    <Compile Include="Framework\ENTRoleData.cs" />
+    <Compile Include="Framework\ENTRoleUserAccountData.cs" />
+    <Compile Include="Framework\ENTUserAccountData.cs" />
+    <Compile Include="Framework\DBHelper.cs" />
+    <Compile Include="Framework\ENTWFItemData.cs" />
+    <Compile Include="Framework\ENTWFItemOwnerData.cs" />
+    <Compile Include="Framework\ENTWFItemStateHistoryData.cs" />
+    <Compile Include="Framework\ENTWFOwnerGroupData.cs" />
+    <Compile Include="Framework\ENTWFOwnerGroupUserAccountData.cs" />
+    <Compile Include="Framework\ENTWFStateData.cs" />
+    <Compile Include="Framework\ENTWFStatePropertyData.cs" />
+    <Compile Include="Framework\ENTWFTransitionData.cs" />
+    <Compile Include="Framework\ENTWorkflowData.cs" />
+    <Compile Include="Framework\Reports\ENTReportData.cs" />
+    <Compile Include="Framework\Reports\ReportAuditDataQuery.cs" />
+    <Compile Include="Framework\Reports\ReportENTRoleData.cs" />
+    <Compile Include="Framework\Reports\ReportENTRoleDataQuery.cs" />
+    <Compile Include="HolidayData.cs" />
+    <Compile Include="HRPaidTimeOff.cs">
+      <DependentUpon>HRPaidTimeOff.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HRPaidTimeOff.designer.cs">
+      <DependentUpon>HRPaidTimeOff.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="HRPaidTimeOffDataContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PTODayTypeData.cs" />
+    <Compile Include="PTORequestData.cs" />
+    <Compile Include="PTORequestTypeData.cs" />
+    <Compile Include="PTOVacationBankData.cs" />
+    <Compile Include="Reports\ReportMyPTORequestsData.cs" />
+    <Compile Include="Reports\ReportPTORequestsQueryData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="HRPaidTimeOff.dbml">
+      <SubType>Designer</SubType>
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HRPaidTimeOff.designer.cs</LastGenOutput>
+    </None>
+    <None Include="HRPaidTimeOff.dbml.layout">
+      <DependentUpon>HRPaidTimeOff.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\V2.Common\Common.csproj">
+      <Project>{D0D71825-51CC-40E1-B3BE-E7240ED3870E}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24.625, 20.375" name="HRPaidTimeOff">
+  <DataContextMoniker Name="/HRPaidTimeOffDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1ea75227-b264-4543-b521-60b4ca91b089" absoluteBounds="0.5, 0.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f251fc94-8a7d-4a71-9b19-da74d0e7dcd3" absoluteBounds="0.51500000000000057, 0.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d783191d-1c64-45d3-b92d-9090038d187d" absoluteBounds="0.5, 3.375, 2, 3.1170068359374996">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTMenuItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a3b4d52-f38e-4183-8139-fdf9da5bc355" absoluteBounds="0.51500000000000012, 3.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.20923076923077 : 6.11462646484375); (1.20923076923077 : 6.36462646484375); (1.80461538461538 : 6.36462646484375); (1.80461538461538 : 6.11462646484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTMenuItem/ENTMenuItem_ENTMenuItem" />
+      <nodes>
+        <classShapeMoniker Id="d783191d-1c64-45d3-b92d-9090038d187d" />
+        <classShapeMoniker Id="d783191d-1c64-45d3-b92d-9090038d187d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="28d5af28-a276-4c3f-aa9b-edaaeb514636" absoluteBounds="6.375, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f51ad4cb-840d-4b64-b107-ce3a4e932796" absoluteBounds="6.39, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da61f8a1-92a7-4c8a-9af1-24471076f708" absoluteBounds="6.5, 3.375, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTRoleCapability" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bf060da-ca30-4032-8fa7-3368cf1ab5c2" absoluteBounds="6.515, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.4375 : 2.41788981119792); (7.4375 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTRole/ENTRole_ENTRoleCapability" />
+      <nodes>
+        <classShapeMoniker Id="28d5af28-a276-4c3f-aa9b-edaaeb514636" />
+        <classShapeMoniker Id="da61f8a1-92a7-4c8a-9af1-24471076f708" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="632ccaf7-ea2e-4222-ae35-837bd1e8dd41" absoluteBounds="3.5, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTRoleUserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="395cf445-548d-48e8-92f6-0fc61179ee35" absoluteBounds="3.5149999999999997, 0.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 1.45894490559896); (5.5 : 1.45894490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTRole/ENTRole_ENTRoleUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="28d5af28-a276-4c3f-aa9b-edaaeb514636" />
+        <classShapeMoniker Id="632ccaf7-ea2e-4222-ae35-837bd1e8dd41" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 1.54111857096354); (3.5 : 1.54111857096354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTRoleUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="632ccaf7-ea2e-4222-ae35-837bd1e8dd41" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0629b1ed-576b-4d97-8ff7-ba2b2d562632" absoluteBounds="3.5, 3.375, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTCapability" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d190ac75-09c9-40f7-bbb5-da770ea7bfd7" absoluteBounds="3.5149999999999997, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.49829223632812); (6.5 : 4.49829223632812)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTCapability/ENTCapability_ENTRoleCapability" />
+      <nodes>
+        <classShapeMoniker Id="0629b1ed-576b-4d97-8ff7-ba2b2d562632" />
+        <classShapeMoniker Id="da61f8a1-92a7-4c8a-9af1-24471076f708" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.49829223632813); (3.10416666666667 : 4.49829223632813 : JumpStart); (3.27083333333333 : 4.49829223632813 : JumpEnd); (3.5 : 4.49829223632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTMenuItem/ENTMenuItem_ENTCapability" />
+      <nodes>
+        <classShapeMoniker Id="d783191d-1c64-45d3-b92d-9090038d187d" />
+        <classShapeMoniker Id="0629b1ed-576b-4d97-8ff7-ba2b2d562632" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="77e51707-86cd-4421-994f-20c90776a227" absoluteBounds="5.875, 14.75, 2.625, 2.3478011067708344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFOwnerGroupUserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3900cebf-7efa-4d86-9a6c-9c3b2facca3a" absoluteBounds="5.89, 15.21, 2.5949999999999998, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.78763956705729); (3.16666666666667 : 1.78763956705729 : JumpStart); (3.33333333333333 : 1.78763956705729 : JumpEnd); (3.4375 : 1.78763956705729); (3.4375 : 14.65625); (7.1875 : 14.65625); (7.1875 : 14.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTWFOwnerGroupUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="77e51707-86cd-4421-994f-20c90776a227" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5981bf60-2781-4d35-920c-a81ebd0d891b" absoluteBounds="5.875, 12, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFStateProperty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c2008af-d8e4-4aeb-a184-4c26f6eefd89" absoluteBounds="5.8900000000000006, 12.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c4fcee1-c50d-467e-9667-f4406d8a8898" absoluteBounds="3.5, 17.5, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFItemOwner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b44be8a1-7198-4db5-a22e-72ce93e047f1" absoluteBounds="3.5150000000000006, 17.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a2cc819-dd0b-4783-a538-eaf5c526bb1f" absoluteBounds="8.25, 12, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFItemStateHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13d30c85-e9d0-4e7d-91a3-8c684e7407f3" absoluteBounds="8.265, 12.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.031252 : 3.07527913411458); (2.031252 : 3.25); (3.1875 : 3.25); (3.1875 : 18.6232922363281); (3.5 : 18.6232922363281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTWFItemOwner" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="5c4fcee1-c50d-467e-9667-f4406d8a8898" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.46271135058594); (3 : 2.46271135058594); (3 : 2.83223714192708); (3.35416666666667 : 2.83223714192708 : JumpStart); (3.52083333333333 : 2.83223714192708 : JumpEnd); (9.406249 : 2.83223714192708); (9.406249 : 12)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTWFItemStateHistory" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="6a2cc819-dd0b-4783-a538-eaf5c526bb1f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5ac00aa1-f063-48f5-b3b1-9d2f2efee1a8" absoluteBounds="12.75, 5, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/Holiday" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eaa2a7c6-1c18-484c-92d4-ebe978510cb0" absoluteBounds="12.765, 5.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="638c8065-bbd7-4e9e-b7f9-4d63ebc70399" absoluteBounds="12.75, 2.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/PTODayType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9100731c-ba0f-408a-a916-88784026a4bf" absoluteBounds="12.765, 3.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57de4687-27bd-46ee-8c1f-2e3157a241e9" absoluteBounds="9.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/PTORequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b111fce3-9209-42dc-a7ba-b340b0653fe4" absoluteBounds="9.765, 1.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69a8c78f-90a1-447b-8ce0-bb09bd8d767e" absoluteBounds="12.75, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/PTORequestType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b217280-1989-45c5-bdef-05017b78ac0e" absoluteBounds="12.765, 1.0850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.01625813802083); (9.54166666666667 : 3.01625813802083 : JumpStart); (9.70833333333333 : 3.01625813802083 : JumpEnd); (9.75 : 3.01625813802083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_PTORequest" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="57de4687-27bd-46ee-8c1f-2e3157a241e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 2.95546590169271); (11.75 : 2.95546590169271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/PTODayType/PTODayType_PTORequest" />
+      <nodes>
+        <classShapeMoniker Id="638c8065-bbd7-4e9e-b7f9-4d63ebc70399" />
+        <classShapeMoniker Id="57de4687-27bd-46ee-8c1f-2e3157a241e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 1.64644490559896); (11.75 : 1.64644490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/PTORequestType/PTORequestType_PTORequest" />
+      <nodes>
+        <classShapeMoniker Id="69a8c78f-90a1-447b-8ce0-bb09bd8d767e" />
+        <classShapeMoniker Id="57de4687-27bd-46ee-8c1f-2e3157a241e9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2f4d77bf-ea9f-429b-81ff-6a2f2fec9b1d" absoluteBounds="9.75, 3.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/PTOVacationBank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12b6fc63-228d-4837-a295-37753d177928" absoluteBounds="9.765, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.11256778352865); (3.25 : 1.11256778352865); (3.25 : 2.70723714192708); (9.625 : 2.70723714192708); (9.625 : 3.41093180338542); (10.75 : 3.41093180338542); (10.75 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_PTOVacationBank" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="2f4d77bf-ea9f-429b-81ff-6a2f2fec9b1d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8fbfc452-8a78-498a-a962-bddcc90c4273" absoluteBounds="3.5, 14.75, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFOwnerGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2830e02a-446d-47b2-b046-685440542d43" absoluteBounds="3.5150000000000006, 15.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 15.3593363010305); (5.875 : 15.3593363010305)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFOwnerGroup/ENTWFOwnerGroup_ENTWFOwnerGroupUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="8fbfc452-8a78-498a-a962-bddcc90c4273" />
+        <classShapeMoniker Id="77e51707-86cd-4421-994f-20c90776a227" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 17.3252791341146); (4.5 : 17.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFOwnerGroup/ENTWFOwnerGroup_ENTWFItemOwner" />
+      <nodes>
+        <classShapeMoniker Id="8fbfc452-8a78-498a-a962-bddcc90c4273" />
+        <classShapeMoniker Id="5c4fcee1-c50d-467e-9667-f4406d8a8898" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f3c2fda1-2f53-4e07-8059-10efbcd1448b" absoluteBounds="1.125, 17.375, 2, 2.73240397135417">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a61aa283-e9ee-4538-a23e-e2097e9961d7" absoluteBounds="1.1400000000000006, 17.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 17.9991461181641); (3.5 : 17.9991461181641)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFItem/ENTWFItem_ENTWFItemOwner" />
+      <nodes>
+        <classShapeMoniker Id="f3c2fda1-2f53-4e07-8059-10efbcd1448b" />
+        <classShapeMoniker Id="5c4fcee1-c50d-467e-9667-f4406d8a8898" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 17.40625); (9.55468875 : 17.40625); (9.55468875 : 14.2465844726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFItem/ENTWFItem_ENTWFItemStateHistory" />
+      <nodes>
+        <classShapeMoniker Id="f3c2fda1-2f53-4e07-8059-10efbcd1448b" />
+        <classShapeMoniker Id="6a2cc819-dd0b-4783-a538-eaf5c526bb1f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.968748 : 3.07527913411458); (0.968748 : 3.3125); (0.4375 : 3.3125); (0.4375 : 18.6117179016927); (1.125 : 18.6117179016927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTWFItem" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="f3c2fda1-2f53-4e07-8059-10efbcd1448b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="df64651b-ec72-46c0-9d46-4544da4feba2" absoluteBounds="3.625, 12, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c724a508-f87a-4fd5-8c6d-7d574d383d03" absoluteBounds="3.6399999999999997, 12.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 13.2054659016927); (5.875 : 13.2054659016927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFState/ENTWFState_ENTWFStateProperty" />
+      <nodes>
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+        <classShapeMoniker Id="5981bf60-2781-4d35-920c-a81ebd0d891b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 13.8723236616086); (8.7968725 : 13.8723236616086); (8.7968725 : 14.2465844726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFState/ENTWFState_ENTWFItemStateHistory" />
+      <nodes>
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+        <classShapeMoniker Id="6a2cc819-dd0b-4783-a538-eaf5c526bb1f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5625 : 14.75); (4.5625 : 14.5752791341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFOwnerGroup/ENTWFOwnerGroup_ENTWFState" />
+      <nodes>
+        <classShapeMoniker Id="8fbfc452-8a78-498a-a962-bddcc90c4273" />
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4de6036b-ca66-4604-92bb-03b798afca5c" absoluteBounds="1.125, 14.375, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWFTransition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2091a67d-88c6-414e-b077-01ff6e2c3024" absoluteBounds="1.1400000000000006, 14.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 13.6896098820613); (2.125 : 13.6896098820613); (2.125 : 14.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFState/ENTWFState_ENTWFTransition" />
+      <nodes>
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+        <classShapeMoniker Id="4de6036b-ca66-4604-92bb-03b798afca5c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 12.903940630008); (3.52083333333333 : 12.903940630008 : JumpStart); (3.35416666666667 : 12.903940630008 : JumpEnd); (3.27083333333333 : 12.903940630008 : JumpStart); (3.10416666666667 : 12.903940630008 : JumpEnd); (2.125 : 12.903940630008); (2.125 : 14.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFState/ENTWFState_ENTWFTransition1" />
+      <nodes>
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+        <classShapeMoniker Id="4de6036b-ca66-4604-92bb-03b798afca5c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="df2c7599-d1ca-49fb-a814-d2b55ff21a66" absoluteBounds="7, 7.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTEmail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d3e2563-dedc-4dca-97c8-074fda704b0c" absoluteBounds="7.0150000000000006, 7.7100000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b001c360-a7a0-432a-83a9-b9abf7d6265a" absoluteBounds="12.75, 7.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e709d1db-2ca8-4e3c-8852-b5928ffd733f" absoluteBounds="12.765, 8.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af03b9b0-3d0d-4158-86d7-12163bd30521" absoluteBounds="15.5, 7.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTNotificationENTUserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e07f7644-286a-4cd0-8f64-af5a5d72b88c" absoluteBounds="15.515, 8.335, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.75 : 8.91611857096354); (15.5 : 8.91611857096354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTNotification/ENTNotification_ENTNotificationENTUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="b001c360-a7a0-432a-83a9-b9abf7d6265a" />
+        <classShapeMoniker Id="af03b9b0-3d0d-4158-86d7-12163bd30521" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.12517545882161); (3.125 : 2.12517545882161); (3.125 : 2.89473714192708); (3.35416666666667 : 2.89473714192708 : JumpStart); (3.52083333333333 : 2.89473714192708 : JumpEnd); (9.25 : 2.89473714192708); (9.25 : 3.53593180338542); (9.32291566666667 : 3.53593180338542 : JumpStart); (9.48958233333333 : 3.53593180338542 : JumpEnd); (10.6666666666667 : 3.53593180338542 : JumpStart); (10.8333333333333 : 3.53593180338542 : JumpEnd); (12.5 : 3.53593180338542); (12.5 : 4.75); (16.5 : 4.75); (16.5 : 7.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTUserAccount/ENTUserAccount_ENTNotificationENTUserAccount" />
+      <nodes>
+        <classShapeMoniker Id="1ea75227-b264-4543-b521-60b4ca91b089" />
+        <classShapeMoniker Id="af03b9b0-3d0d-4158-86d7-12163bd30521" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dffabe6c-d1cd-4df7-9e96-e78216c2e716" absoluteBounds="15.5, 10.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTNotificationENTWFState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6093fa4c-1949-4887-a045-21f1975b78fd" absoluteBounds="15.515, 11.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.5 : 9.95723714192708); (16.5 : 10.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTNotificationENTUserAccount/ENTNotificationENTUserAccount_ENTNotificationENTWFState" />
+      <nodes>
+        <classShapeMoniker Id="af03b9b0-3d0d-4158-86d7-12163bd30521" />
+        <classShapeMoniker Id="dffabe6c-d1cd-4df7-9e96-e78216c2e716" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 14.52435496875); (16.5 : 14.52435496875); (16.5 : 12.8322371419271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWFState/ENTWFState_ENTNotificationENTWFState" />
+      <nodes>
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+        <classShapeMoniker Id="dffabe6c-d1cd-4df7-9e96-e78216c2e716" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a3c31925-5563-4be1-9844-861c4dc7d841" absoluteBounds="1, 11, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTWorkflow" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ae713f0-83a9-4299-871d-2f00c2009708" absoluteBounds="1.0150000000000001, 11.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.00153746153846 : 13.0822371419271); (0.626537461538462 : 13.4572371419271); (0.75 : 13.4572371419271); (0.75 : 17); (1.125 : 17.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWorkflow/ENTWorkflow_ENTWFItem" />
+      <nodes>
+        <classShapeMoniker Id="a3c31925-5563-4be1-9844-861c4dc7d841" />
+        <classShapeMoniker Id="f3c2fda1-2f53-4e07-8059-10efbcd1448b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 12.389470315004); (3.625 : 12.389470315004)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWorkflow/ENTWorkflow_ENTWFState" />
+      <nodes>
+        <classShapeMoniker Id="a3c31925-5563-4be1-9844-861c4dc7d841" />
+        <classShapeMoniker Id="df64651b-ec72-46c0-9d46-4544da4feba2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5625 : 13.0822371419271); (1.5625 : 14.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTWorkflow/ENTWorkflow_ENTWFTransition" />
+      <nodes>
+        <classShapeMoniker Id="a3c31925-5563-4be1-9844-861c4dc7d841" />
+        <classShapeMoniker Id="4de6036b-ca66-4604-92bb-03b798afca5c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b777f68b-8ab2-4bd4-9c03-ff2545842ae2" absoluteBounds="19.25, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aae1042c-74a5-46aa-aeb9-bfdd1d9417ac" absoluteBounds="19.265, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="397f6e3b-8cac-4f84-84be-39dfbce928ed" absoluteBounds="22.375, 4.75, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTAuditObjectProperty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd43db82-605c-4c36-b9c1-ef18f83b866d" absoluteBounds="22.39, 5.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8884ccff-37fc-4c89-90d6-3d464cbadbce" absoluteBounds="19.25, 7.375, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTAudit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02d747a9-e40c-4c58-9d91-fd6f09333d06" absoluteBounds="19.265, 7.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ed4f464-96f6-45be-9285-aadc42813025" absoluteBounds="19.75, 4.75, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/HRPaidTimeOffDataContext/ENTAuditObject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cd1e98d-f820-4697-ba16-617d9c45b2d9" absoluteBounds="19.765, 5.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.75 : 5.79111857096354); (22.375 : 5.79111857096354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRPaidTimeOffDataContext/ENTAuditObject/ENTAuditObject_ENTAuditObjectProperty" />
+      <nodes>
+        <classShapeMoniker Id="7ed4f464-96f6-45be-9285-aadc42813025" />
+        <classShapeMoniker Id="397f6e3b-8cac-4f84-84be-39dfbce928ed" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DAAC08B-3E5F-4AAD-8903-5379FFB4BD8B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgencyTimeManagementGUI</RootNamespace>
+    <AssemblyName>AgencyTimeManagementGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.19452, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.Enterprise.Viewing.ReportSource.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>..\LIBS\CrystalReports\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administration\Administration.aspx" />
+    <Content Include="Administration\AuditObject.aspx" />
+    <Content Include="Administration\AuditObjects.aspx" />
+    <Content Include="Administration\CopyVacationBank.aspx" />
+    <Content Include="Administration\Holiday.aspx" />
+    <Content Include="Administration\Holidays.aspx" />
+    <Content Include="Administration\NotificationTemplate.aspx" />
+    <Content Include="Administration\NotificationTemplates.aspx" />
+    <Content Include="Administration\Role.aspx" />
+    <Content Include="Administration\Roles.aspx" />
+    <Content Include="Administration\User.aspx" />
+    <Content Include="Administration\Users.aspx" />
+    <Content Include="Administration\VacationBank.aspx" />
+    <Content Include="Administration\VacationBanks.aspx" />
+    <Content Include="Administration\Workflow.aspx" />
+    <Content Include="Administration\WorkflowOwner.aspx" />
+    <Content Include="Administration\WorkflowOwners.aspx" />
+    <Content Include="Administration\Workflows.aspx" />
+    <Content Include="Administration\WorkflowState.aspx" />
+    <Content Include="Administration\WorkflowStates.aspx" />
+    <Content Include="Administration\WorkflowTransition.aspx" />
+    <Content Include="Administration\WorkflowTransitions.aspx" />
+    <Content Include="App_Data\HRPaidTimeOff.mdf" />
+    <Content Include="App_Data\HRPaidTimeOff_log.ldf">
+      <DependentUpon>HRPaidTimeOff.mdf</DependentUpon>
+    </Content>
+    <Content Include="Controls\PTORequests.ascx" />
+    <Content Include="Controls\PTORequestsCalendar.ascx" />
+    <Content Include="Startup.aspx" />
+    <Content Include="TestAdminPage.aspx" />
+    <Content Include="images\footer_background.jpg" />
+    <Content Include="images\face.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.jpg" />
+    <Content Include="images\bg_top.jpg" />
+    <Content Include="images\lavalamp-left.gif" />
+    <Content Include="images\lavalamp-left.png" />
+    <Content Include="images\lavalamp-right.gif" />
+    <Content Include="images\lavalamp-right.png" />
+    <Content Include="images\left.gif" />
+    <Content Include="images\left.png" />
+    <Content Include="images\menub_bg.gif" />
+    <Content Include="images\menub_hover_left.gif" />
+    <Content Include="images\menub_hover_right.gif" />
+    <Content Include="images\right.gif" />
+    <Content Include="images\right.png" />
+    <Content Include="images\selected-left-sub.gif" />
+    <Content Include="images\selected-left-sub.png" />
+    <Content Include="images\selected-right-sub.gif" />
+    <Content Include="images\selected-right-sub.png" />
+    <Content Include="images\side_background.jpg" />
+    <Content Include="images\submenu-bottom.gif" />
+    <Content Include="images\submenu-bottom.png" />
+    <Content Include="images\submenu-pointer-bottom.gif" />
+    <Content Include="images\submenu-pointer-selected-bottom.png" />
+    <Content Include="images\submenu-pointer-top.png" />
+    <Content Include="images\submenu-selected-bottom.png" />
+    <Content Include="images\submenu-selected-top.png" />
+    <Content Include="images\subsubmenu-top.gif" />
+    <Content Include="images\subsubmenu-top.png" />
+    <Content Include="jquerycssmenu.css" />
+    <Content Include="PTORequests.aspx" />
+    <Content Include="Reports\PleaseWait.html" />
+    <Content Include="Reports\ReportList.aspx" />
+    <Content Include="Reports\ReportQuery.aspx" />
+    <Content Include="Reports\ReportViewer.aspx" />
+    <Content Include="Reports\ReportViewer3Layer.aspx" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquerycssmenu.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\AuditObject.aspx.cs">
+      <DependentUpon>AuditObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AuditObject.aspx.designer.cs">
+      <DependentUpon>AuditObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\AuditObjects.aspx.cs">
+      <DependentUpon>AuditObjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AuditObjects.aspx.designer.cs">
+      <DependentUpon>AuditObjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CopyVacationBank.aspx.cs">
+      <DependentUpon>CopyVacationBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CopyVacationBank.aspx.designer.cs">
+      <DependentUpon>CopyVacationBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Holiday.aspx.cs">
+      <DependentUpon>Holiday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Holiday.aspx.designer.cs">
+      <DependentUpon>Holiday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Holidays.aspx.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Holidays.aspx.designer.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\CachedReportConstants.cs" />
+    <Compile Include="Base\ICachedReport.cs" />
+    <Compile Include="Administration\NotificationTemplate.aspx.cs">
+      <DependentUpon>NotificationTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\NotificationTemplate.aspx.designer.cs">
+      <DependentUpon>NotificationTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\NotificationTemplates.aspx.cs">
+      <DependentUpon>NotificationTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\NotificationTemplates.aspx.designer.cs">
+      <DependentUpon>NotificationTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\VacationBank.aspx.cs">
+      <DependentUpon>VacationBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\VacationBank.aspx.designer.cs">
+      <DependentUpon>VacationBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\VacationBanks.aspx.cs">
+      <DependentUpon>VacationBanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\VacationBanks.aspx.designer.cs">
+      <DependentUpon>VacationBanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Workflow.aspx.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Workflow.aspx.designer.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowOwner.aspx.cs">
+      <DependentUpon>WorkflowOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowOwner.aspx.designer.cs">
+      <DependentUpon>WorkflowOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowOwners.aspx.cs">
+      <DependentUpon>WorkflowOwners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowOwners.aspx.designer.cs">
+      <DependentUpon>WorkflowOwners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Workflows.aspx.cs">
+      <DependentUpon>Workflows.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Workflows.aspx.designer.cs">
+      <DependentUpon>Workflows.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowState.aspx.cs">
+      <DependentUpon>WorkflowState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowState.aspx.designer.cs">
+      <DependentUpon>WorkflowState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowStates.aspx.cs">
+      <DependentUpon>WorkflowStates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowStates.aspx.designer.cs">
+      <DependentUpon>WorkflowStates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowTransition.aspx.cs">
+      <DependentUpon>WorkflowTransition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowTransition.aspx.designer.cs">
+      <DependentUpon>WorkflowTransition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\WorkflowTransitions.aspx.cs">
+      <DependentUpon>WorkflowTransitions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\WorkflowTransitions.aspx.designer.cs">
+      <DependentUpon>WorkflowTransitions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.aspx.cs">
+      <DependentUpon>Startup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Startup.aspx.designer.cs">
+      <DependentUpon>Startup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyNotifications.aspx.designer.cs">
+      <DependentUpon>MyNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseEditPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\Globals.cs" />
+    <Compile Include="Base\StringHelpers.cs" />
+    <Content Include="Catch.html" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Junk.aspx" />
+    <Content Include="MyNotifications.aspx" />
+    <Content Include="PaidTimeOff.css" />
+    <Content Include="PTORequest.aspx" />
+    <Content Include="PTORequestApprove.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="TestWebParts.aspx" />
+    <Compile Include="Controls\PTORequests.ascx.cs">
+      <DependentUpon>PTORequests.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PTORequests.ascx.designer.cs">
+      <DependentUpon>PTORequests.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PTORequestsCalendar.ascx.cs">
+      <DependentUpon>PTORequestsCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PTORequestsCalendar.ascx.designer.cs">
+      <DependentUpon>PTORequestsCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TestAdminPage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestAdminPage.aspx.designer.cs">
+      <DependentUpon>TestAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Junk.aspx.cs">
+      <DependentUpon>Junk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Junk.aspx.designer.cs">
+      <DependentUpon>Junk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyNotifications.aspx.cs">
+      <DependentUpon>MyNotifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaidTimeOff.master.cs">
+      <DependentUpon>PaidTimeOff.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaidTimeOff.master.designer.cs">
+      <DependentUpon>PaidTimeOff.master</DependentUpon>
+    </Compile>
+    <Compile Include="PaidTimeOffEditGrid.master.cs">
+      <DependentUpon>PaidTimeOffEditGrid.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaidTimeOffEditGrid.master.designer.cs">
+      <DependentUpon>PaidTimeOffEditGrid.master</DependentUpon>
+    </Compile>
+    <Compile Include="PaidTimeOffEditPage.master.cs">
+      <DependentUpon>PaidTimeOffEditPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaidTimeOffEditPage.master.designer.cs">
+      <DependentUpon>PaidTimeOffEditPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTORequest.aspx.cs">
+      <DependentUpon>PTORequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PTORequest.aspx.designer.cs">
+      <DependentUpon>PTORequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PTORequestApprove.aspx.cs">
+      <DependentUpon>PTORequestApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PTORequestApprove.aspx.designer.cs">
+      <DependentUpon>PTORequestApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PTORequests.aspx.cs">
+      <DependentUpon>PTORequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PTORequests.aspx.designer.cs">
+      <DependentUpon>PTORequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Audit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MyPTORequests.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportList.aspx.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportList.aspx.designer.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportQuery.aspx.cs">
+      <DependentUpon>ReportQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportQuery.aspx.designer.cs">
+      <DependentUpon>ReportQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer3Layer.aspx.cs">
+      <DependentUpon>ReportViewer3Layer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer3Layer.aspx.designer.cs">
+      <DependentUpon>ReportViewer3Layer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Roles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Roles3Layer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Schemas\ReportAudit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportAudit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Schemas\ReportMyPTORequests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportMyPTORequests.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Schemas\ReportRoleCapability.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportRoleCapability.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Schemas\ReportRoleUserAccount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportRoleUserAccount.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestWebParts.aspx.cs">
+      <DependentUpon>TestWebParts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catch.aspx.cs">
+      <DependentUpon>Catch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catch.aspx.designer.cs">
+      <DependentUpon>Catch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestWebParts.aspx.designer.cs">
+      <DependentUpon>TestWebParts.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PaidTimeOff.master" />
+    <Content Include="PaidTimeOffEditGrid.master" />
+    <Content Include="PaidTimeOffEditPage.master" />
+    <Content Include="Catch.aspx" />
+    <None Include="Reports\Audit.rpt" />
+    <None Include="Reports\MyPTORequests.rpt" />
+    <None Include="Reports\Roles.rpt" />
+    <None Include="Reports\Roles3Layer.rpt" />
+    <None Include="Reports\Schemas\ReportAudit.xsc">
+      <DependentUpon>ReportAudit.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportAudit.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportAudit.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Schemas\ReportAudit.xss">
+      <DependentUpon>ReportAudit.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportMyPTORequests.xsc">
+      <DependentUpon>ReportMyPTORequests.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportMyPTORequests.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportMyPTORequests.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Schemas\ReportMyPTORequests.xss">
+      <DependentUpon>ReportMyPTORequests.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleCapability.xsc">
+      <DependentUpon>ReportRoleCapability.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleCapability.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportRoleCapability.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleCapability.xss">
+      <DependentUpon>ReportRoleCapability.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleUserAccount.xsc">
+      <DependentUpon>ReportRoleUserAccount.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleUserAccount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportRoleUserAccount.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Schemas\ReportRoleUserAccount.xss">
+      <DependentUpon>ReportRoleUserAccount.xsd</DependentUpon>
+    </None>
+    <None Include="vwd.webinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\V2.Common\Common.csproj">
+      <Project>{D0D71825-51CC-40E1-B3BE-E7240ED3870E}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\V2.FrameworkControls\FrameworkControls.csproj">
+      <Project>{0080AA5C-CA7D-4A5F-AA70-367F91F2F6C4}</Project>
+      <Name>FrameworkControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\V2.PaidTimeOffBLL\PaidTimeOffBLL.csproj">
+      <Project>{8856EC0D-FDC7-4ABD-BC23-804B79AD6E8A}</Project>
+      <Name>PaidTimeOffBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\V2.PaidTimeOffDAL\PaidTimeOffDAL.csproj">
+      <Project>{EEA91A18-A2C1-4C99-940A-F1396E36AA78}</Project>
+      <Name>PaidTimeOffDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53704</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

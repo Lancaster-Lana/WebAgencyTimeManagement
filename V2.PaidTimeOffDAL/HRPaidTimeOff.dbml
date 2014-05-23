@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HRPaidTimeOff" Class="HRPaidTimeOffDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\HRPaidTimeOff.MDF;Integrated Security=True" SettingsObjectName="Agency.PaidTimeOffDAL.Properties.Settings" SettingsPropertyName="HRPaidTimeOffConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ENTUserAccount" Member="ENTUserAccounts">
+    <Type Name="ENTUserAccount" Id="ID1">
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WindowsAccountName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_ENTRoleUserAccount" Member="ENTRoleUserAccounts" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTRoleUserAccount" />
+      <Association Name="ENTUserAccount_ENTWFOwnerGroupUserAccount" Member="ENTWFOwnerGroupUserAccounts" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTWFOwnerGroupUserAccount" />
+      <Association Name="ENTUserAccount_ENTWFItemOwner" Member="ENTWFItemOwners" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTWFItemOwner" />
+      <Association Name="ENTUserAccount_ENTWFItemStateHistory" Member="ENTWFItemStateHistories" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTWFItemStateHistory" />
+      <Association Name="ENTUserAccount_PTORequest" Member="PTORequests" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="PTORequest" />
+      <Association Name="ENTUserAccount_PTOVacationBank" Member="PTOVacationBanks" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="PTOVacationBank" />
+      <Association Name="ENTUserAccount_ENTWFItem" Member="ENTWFItems" ThisKey="ENTUserAccountId" OtherKey="SubmitterENTUserAccountId" Type="ENTWFItem" />
+      <Association Name="ENTUserAccount_ENTNotificationENTUserAccount" Member="ENTNotificationENTUserAccounts" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTNotificationENTUserAccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTMenuItem" Member="ENTMenuItems">
+    <Type Name="ENTMenuItem" Id="ID2">
+      <Column Name="ENTMenuItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuItemName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ParentENTMenuItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplaySequence" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsAlwaysEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTMenuItem_ENTMenuItem" Member="ENTMenuItems" ThisKey="ENTMenuItemId" OtherKey="ParentENTMenuItemId" Type="ENTMenuItem" />
+      <Association Name="ENTMenuItem_ENTCapability" Member="ENTCapabilities" ThisKey="ENTMenuItemId" OtherKey="ENTMenuItemId" Type="ENTCapability" />
+      <Association Name="ENTMenuItem_ENTMenuItem" Member="ENTMenuItem1" ThisKey="ParentENTMenuItemId" OtherKey="ENTMenuItemId" Type="ENTMenuItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTRole" Member="ENTRoles">
+    <Type Name="ENTRole" Id="ID3">
+      <Column Name="ENTRoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTRole_ENTRoleCapability" Member="ENTRoleCapabilities" ThisKey="ENTRoleId" OtherKey="ENTRoleId" Type="ENTRoleCapability" />
+      <Association Name="ENTRole_ENTRoleUserAccount" Member="ENTRoleUserAccounts" ThisKey="ENTRoleId" OtherKey="ENTRoleId" Type="ENTRoleUserAccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTRoleCapability" Member="ENTRoleCapabilities">
+    <Type Name="ENTRoleCapability" Id="ID4">
+      <Column Name="ENTRoleCapabilityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTCapabilityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccessFlag" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTRole_ENTRoleCapability" Member="ENTRole" ThisKey="ENTRoleId" OtherKey="ENTRoleId" Type="ENTRole" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ENTCapability_ENTRoleCapability" Member="ENTCapability" ThisKey="ENTCapabilityId" OtherKey="ENTCapabilityId" Type="ENTCapability" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTRoleUserAccount" Member="ENTRoleUserAccounts">
+    <Type Name="ENTRoleUserAccount" Id="ID5">
+      <Column Name="ENTRoleUserAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTRole_ENTRoleUserAccount" Member="ENTRole" ThisKey="ENTRoleId" OtherKey="ENTRoleId" Type="ENTRole" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ENTUserAccount_ENTRoleUserAccount" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTCapability" Member="ENTCapabilities">
+    <Type Name="ENTCapability" Id="ID6">
+      <Column Name="ENTCapabilityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CapabilityName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ENTMenuItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTCapability_ENTRoleCapability" Member="ENTRoleCapabilities" ThisKey="ENTCapabilityId" OtherKey="ENTCapabilityId" Type="ENTRoleCapability" />
+      <Association Name="ENTMenuItem_ENTCapability" Member="ENTMenuItem" ThisKey="ENTMenuItemId" OtherKey="ENTMenuItemId" Type="ENTMenuItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFOwnerGroupUserAccount" Member="ENTWFOwnerGroupUserAccounts">
+    <Type Name="ENTWFOwnerGroupUserAccount" Id="ID7">
+      <Column Name="ENTWFOwnerGroupUserAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWFOwnerGroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_ENTWFOwnerGroupUserAccount" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+      <Association Name="ENTWFOwnerGroup_ENTWFOwnerGroupUserAccount" Member="ENTWFOwnerGroup" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFOwnerGroup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFStateProperty" Member="ENTWFStateProperties">
+    <Type Name="ENTWFStateProperty" Id="ID8">
+      <Column Name="ENTWFStatePropertyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWFStateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Required" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ReadOnly" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWFState_ENTWFStateProperty" Member="ENTWFState" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFState" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFItemOwner" Member="ENTWFItemOwners">
+    <Type Name="ENTWFItemOwner" Id="ID9">
+      <Column Name="ENTWFItemOwnerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWFItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTWFOwnerGroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_ENTWFItemOwner" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+      <Association Name="ENTWFOwnerGroup_ENTWFItemOwner" Member="ENTWFOwnerGroup" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFOwnerGroup" IsForeignKey="true" />
+      <Association Name="ENTWFItem_ENTWFItemOwner" Member="ENTWFItem" ThisKey="ENTWFItemId" OtherKey="ENTWFItemId" Type="ENTWFItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFItemStateHistory" Member="ENTWFItemStateHistories">
+    <Type Name="ENTWFItemStateHistory" Id="ID10">
+      <Column Name="ENTWFItemStateHistoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWFItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTWFStateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_ENTWFItemStateHistory" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+      <Association Name="ENTWFItem_ENTWFItemStateHistory" Member="ENTWFItem" ThisKey="ENTWFItemId" OtherKey="ENTWFItemId" Type="ENTWFItem" IsForeignKey="true" />
+      <Association Name="ENTWFState_ENTWFItemStateHistory" Member="ENTWFState" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFState" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Holiday" Member="Holidays">
+    <Type Name="Holiday" Id="ID11">
+      <Column Name="HolidayId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HolidayName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HolidayDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PTODayType" Member="PTODayTypes">
+    <Type Name="PTODayType" Id="ID13">
+      <Column Name="PTODayTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PTODayTypeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="PTODayType_PTORequest" Member="PTORequests" ThisKey="PTODayTypeId" OtherKey="PTODayTypeId" Type="PTORequest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PTORequest" Member="PTORequests">
+    <Type Name="PTORequest" Id="ID12">
+      <Column Name="PTORequestId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PTODayTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PTORequestTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_PTORequest" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+      <Association Name="PTODayType_PTORequest" Member="PTODayType" ThisKey="PTODayTypeId" OtherKey="PTODayTypeId" Type="PTODayType" IsForeignKey="true" />
+      <Association Name="PTORequestType_PTORequest" Member="PTORequestType" ThisKey="PTORequestTypeId" OtherKey="PTORequestTypeId" Type="PTORequestType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PTORequestType" Member="PTORequestTypes">
+    <Type Name="PTORequestType" Id="ID14">
+      <Column Name="PTORequestTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PTORequestTypeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="PTORequestType_PTORequest" Member="PTORequests" ThisKey="PTORequestTypeId" OtherKey="PTORequestTypeId" Type="PTORequest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PTOVacationBank" Member="PTOVacationBanks">
+    <Type Name="PTOVacationBank" Id="ID15">
+      <Column Name="PTOVacationBankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VacationYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PersonalDays" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="VacationDays" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTUserAccount_PTOVacationBank" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFOwnerGroup" Member="ENTWFOwnerGroups">
+    <Type Name="ENTWFOwnerGroup" Id="ID16">
+      <Column Name="ENTWFOwnerGroupId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWorkflowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerGroupName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultENTUserAccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDefaultSameAsLast" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWFOwnerGroup_ENTWFOwnerGroupUserAccount" Member="ENTWFOwnerGroupUserAccounts" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFOwnerGroupUserAccount" />
+      <Association Name="ENTWFOwnerGroup_ENTWFItemOwner" Member="ENTWFItemOwners" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFItemOwner" />
+      <Association Name="ENTWFOwnerGroup_ENTWFState" Member="ENTWFStates" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFState" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFItem" Member="ENTWFItems">
+    <Type Name="ENTWFItem" Id="ID17">
+      <Column Name="ENTWFItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWorkflowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubmitterENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentWFStateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWFItem_ENTWFItemOwner" Member="ENTWFItemOwners" ThisKey="ENTWFItemId" OtherKey="ENTWFItemId" Type="ENTWFItemOwner" />
+      <Association Name="ENTWFItem_ENTWFItemStateHistory" Member="ENTWFItemStateHistories" ThisKey="ENTWFItemId" OtherKey="ENTWFItemId" Type="ENTWFItemStateHistory" />
+      <Association Name="ENTUserAccount_ENTWFItem" Member="ENTUserAccount" ThisKey="SubmitterENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+      <Association Name="ENTWorkflow_ENTWFItem" Member="ENTWorkflow" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWorkflow" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFState" Member="ENTWFStates">
+    <Type Name="ENTWFState" Id="ID18">
+      <Column Name="ENTWFStateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWorkflowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StateName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ENTWFOwnerGroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsOwnerSubmitter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWFState_ENTWFStateProperty" Member="ENTWFStateProperties" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFStateProperty" />
+      <Association Name="ENTWFState_ENTWFItemStateHistory" Member="ENTWFItemStateHistories" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFItemStateHistory" />
+      <Association Name="ENTWFState_ENTWFTransition" Member="ENTWFTransitions" ThisKey="ENTWFStateId" OtherKey="FromENTWFStateId" Type="ENTWFTransition" />
+      <Association Name="ENTWFState_ENTWFTransition1" Member="ENTWFTransitions1" ThisKey="ENTWFStateId" OtherKey="ToENTWFStateId" Type="ENTWFTransition" />
+      <Association Name="ENTWFState_ENTNotificationENTWFState" Member="ENTNotificationENTWFStates" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTNotificationENTWFState" />
+      <Association Name="ENTWFOwnerGroup_ENTWFState" Member="ENTWFOwnerGroup" ThisKey="ENTWFOwnerGroupId" OtherKey="ENTWFOwnerGroupId" Type="ENTWFOwnerGroup" IsForeignKey="true" />
+      <Association Name="ENTWorkflow_ENTWFState" Member="ENTWorkflow" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWorkflow" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWFTransition" Member="ENTWFTransitions">
+    <Type Name="ENTWFTransition" Id="ID19">
+      <Column Name="ENTWFTransitionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTWorkflowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TransitionName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FromENTWFStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToENTWFStateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostTransitionMethodName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWFState_ENTWFTransition" Member="ENTWFState" ThisKey="FromENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFState" IsForeignKey="true" />
+      <Association Name="ENTWFState_ENTWFTransition1" Member="ENTWFState1" ThisKey="ToENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFState" IsForeignKey="true" />
+      <Association Name="ENTWorkflow_ENTWFTransition" Member="ENTWorkflow" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWorkflow" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTEmail" Member="ENTEmails">
+    <Type Name="ENTEmail" Id="ID20">
+      <Column Name="ENTEmailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ToEmailAddress" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CCEmailAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BCCEmailAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FromEmailAddress" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailStatusFlag" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTNotification" Member="ENTNotifications">
+    <Type Name="ENTNotification" Id="ID21">
+      <Column Name="ENTNotificationId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="FromEmailAddress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTNotification_ENTNotificationENTUserAccount" Member="ENTNotificationENTUserAccounts" ThisKey="ENTNotificationId" OtherKey="ENTNotificationId" Type="ENTNotificationENTUserAccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTNotificationENTUserAccount" Member="ENTNotificationENTUserAccounts">
+    <Type Name="ENTNotificationENTUserAccount" Id="ID22">
+      <Column Name="ENTNotificationENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTNotificationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTNotificationENTUserAccount_ENTNotificationENTWFState" Member="ENTNotificationENTWFStates" ThisKey="ENTNotificationENTUserAccountId" OtherKey="ENTNotificationENTUserAccountId" Type="ENTNotificationENTWFState" />
+      <Association Name="ENTNotification_ENTNotificationENTUserAccount" Member="ENTNotification" ThisKey="ENTNotificationId" OtherKey="ENTNotificationId" Type="ENTNotification" IsForeignKey="true" />
+      <Association Name="ENTUserAccount_ENTNotificationENTUserAccount" Member="ENTUserAccount" ThisKey="ENTUserAccountId" OtherKey="ENTUserAccountId" Type="ENTUserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTNotificationENTWFState" Member="ENTNotificationENTWFStates">
+    <Type Name="ENTNotificationENTWFState" Id="ID23">
+      <Column Name="ENTNotificationENTWFStateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTNotificationENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ENTWFStateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTNotificationENTUserAccount_ENTNotificationENTWFState" Member="ENTNotificationENTUserAccount" ThisKey="ENTNotificationENTUserAccountId" OtherKey="ENTNotificationENTUserAccountId" Type="ENTNotificationENTUserAccount" IsForeignKey="true" />
+      <Association Name="ENTWFState_ENTNotificationENTWFState" Member="ENTWFState" ThisKey="ENTWFStateId" OtherKey="ENTWFStateId" Type="ENTWFState" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTWorkflow" Member="ENTWorkflows">
+    <Type Name="ENTWorkflow" Id="ID24">
+      <Column Name="ENTWorkflowId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WorkflowName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ENTWorkflowObjectName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTWorkflow_ENTWFItem" Member="ENTWFItems" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWFItem" />
+      <Association Name="ENTWorkflow_ENTWFState" Member="ENTWFStates" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWFState" />
+      <Association Name="ENTWorkflow_ENTWFTransition" Member="ENTWFTransitions" ThisKey="ENTWorkflowId" OtherKey="ENTWorkflowId" Type="ENTWFTransition" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTReport" Member="ENTReports">
+    <Type Name="ENTReport" Id="ID25">
+      <Column Name="ENTReportId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReportName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SubReportObjectName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubReportMethodName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTAuditObjectProperty" Member="ENTAuditObjectProperties">
+    <Type Name="ENTAuditObjectProperty" Id="ID26">
+      <Column Name="ENTAuditObjectPropertyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ENTAuditObjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTAuditObject_ENTAuditObjectProperty" Member="ENTAuditObject" ThisKey="ENTAuditObjectId" OtherKey="ENTAuditObjectId" Type="ENTAuditObject" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTAudit" Member="ENTAudits">
+    <Type Name="ENTAudit" Id="ID27">
+      <Column Name="ENTAuditId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ObjectName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="OldValue" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewValue" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AuditType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTAuditObject" Member="ENTAuditObjects">
+    <Type Name="ENTAuditObject" Id="ID28">
+      <Column Name="ENTAuditObjectId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ObjectName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectFullyQualifiedName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateENTUserAccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="ENTAuditObject_ENTAuditObjectProperty" Member="ENTAuditObjectProperties" ThisKey="ENTAuditObjectId" OtherKey="ENTAuditObjectId" Type="ENTAuditObjectProperty" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ENTUserAccountDelete" Method="ENTUserAccountDelete">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTUserAccountInsert" Method="ENTUserAccountInsert">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="WindowsAccountName" Parameter="windowsAccountName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTUserAccountUpdate" Method="ENTUserAccountUpdate">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WindowsAccountName" Parameter="windowsAccountName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTUserAccountSelectAll" Method="ENTUserAccountSelectAll">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.ENTUserAccountSelectById" Method="ENTUserAccountSelectById">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.ENTMenuItemSelectAll" Method="ENTMenuItemSelectAll">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.ENTRoleDelete" Method="ENTRoleDelete">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleInsert" Method="ENTRoleInsert">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleUpdate" Method="ENTRoleUpdate">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleSelectAll" Method="ENTRoleSelectAll">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.ENTRoleSelectById" Method="ENTRoleSelectById">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilityInsert" Method="ENTRoleCapabilityInsert">
+    <Parameter Name="ENTRoleCapabilityId" Parameter="eNTRoleCapabilityId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTCapabilityId" Parameter="eNTCapabilityId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccessFlag" Parameter="accessFlag" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilityUpdate" Method="ENTRoleCapabilityUpdate">
+    <Parameter Name="ENTRoleCapabilityId" Parameter="eNTRoleCapabilityId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTCapabilityId" Parameter="eNTCapabilityId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccessFlag" Parameter="accessFlag" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilitySelectByENTRoleId" Method="ENTRoleCapabilitySelectByENTRoleId">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilityDelete" Method="ENTRoleCapabilityDelete">
+    <Parameter Name="ENTRoleCapabilityId" Parameter="eNTRoleCapabilityId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountDelete" Method="ENTRoleUserAccountDelete">
+    <Parameter Name="ENTRoleUserAccountId" Parameter="eNTRoleUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountInsert" Method="ENTRoleUserAccountInsert">
+    <Parameter Name="ENTRoleUserAccountId" Parameter="eNTRoleUserAccountId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountUpdate" Method="ENTRoleUserAccountUpdate">
+    <Parameter Name="ENTRoleUserAccountId" Parameter="eNTRoleUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountSelectByENTRoleId" Method="ENTRoleUserAccountSelectByENTRoleId">
+    <Parameter Name="ENTRoleId" Parameter="eNTRoleId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.ENTRoleSelectByENTUserAccountId" Method="ENTRoleSelectByENTUserAccountId">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.ENTCapabilitySelectAll" Method="ENTCapabilitySelectAll">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.ENTCapabilitySelectById" Method="ENTCapabilitySelectById">
+    <Parameter Name="ENTCapabilityId" Parameter="eNTCapabilityId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountSelectAll" Method="ENTWFOwnerGroupUserAccountSelectAll">
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountSelectById" Method="ENTWFOwnerGroupUserAccountSelectById">
+    <Parameter Name="ENTWFOwnerGroupUserAccountId" Parameter="eNTWFOwnerGroupUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountDelete" Method="ENTWFOwnerGroupUserAccountDelete">
+    <Parameter Name="ENTWFOwnerGroupUserAccountId" Parameter="eNTWFOwnerGroupUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountInsert" Method="ENTWFOwnerGroupUserAccountInsert">
+    <Parameter Name="ENTWFOwnerGroupUserAccountId" Parameter="eNTWFOwnerGroupUserAccountId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountUpdate" Method="ENTWFOwnerGroupUserAccountUpdate">
+    <Parameter Name="ENTWFOwnerGroupUserAccountId" Parameter="eNTWFOwnerGroupUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupSelectCountByNameWorkflowId" Method="ENTWFOwnerGroupSelectCountByNameWorkflowId">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OwnerGroupName" Parameter="ownerGroupName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ENTWFOwnerGroupSelectCountByNameWorkflowIdResult">
+      <Column Name="CountOfNames" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUserAccountSelectByENTWFOwnerGroupId" Method="ENTWFOwnerGroupUserAccountSelectByENTWFOwnerGroupId">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="dbo.ENTWFStateSelectCountByENTWFOwnerGroupId" Method="ENTWFStateSelectCountByENTWFOwnerGroupId">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ENTWFStateSelectCountByENTWFOwnerGroupIdResult">
+      <Column Name="CountOfStates" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTUserAccountSelectByENTWFOwnerGroupId" Method="ENTUserAccountSelectByENTWFOwnerGroupId">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertyDelete" Method="ENTWFStatePropertyDelete">
+    <Parameter Name="ENTWFStatePropertyId" Parameter="eNTWFStatePropertyId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertyDeleteByENTWFStateId" Method="ENTWFStatePropertyDeleteByENTWFStateId">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertySelectAll" Method="ENTWFStatePropertySelectAll">
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertySelectByENTWFStateId" Method="ENTWFStatePropertySelectByENTWFStateId">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertyInsert" Method="ENTWFStatePropertyInsert">
+    <Parameter Name="ENTWFStatePropertyId" Parameter="eNTWFStatePropertyId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Required" Parameter="required" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ReadOnly" Parameter="readOnly" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertyUpdate" Method="ENTWFStatePropertyUpdate">
+    <Parameter Name="ENTWFStatePropertyId" Parameter="eNTWFStatePropertyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Required" Parameter="required" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ReadOnly" Parameter="readOnly" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStatePropertySelectById" Method="ENTWFStatePropertySelectById">
+    <Parameter Name="ENTWFStatePropertyId" Parameter="eNTWFStatePropertyId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID8" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerDelete" Method="ENTWFItemOwnerDelete">
+    <Parameter Name="ENTWFItemOwnerId" Parameter="eNTWFItemOwnerId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerInsert" Method="ENTWFItemOwnerInsert">
+    <Parameter Name="ENTWFItemOwnerId" Parameter="eNTWFItemOwnerId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerUpdate" Method="ENTWFItemOwnerUpdate">
+    <Parameter Name="ENTWFItemOwnerId" Parameter="eNTWFItemOwnerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerSelectAll" Method="ENTWFItemOwnerSelectAll">
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerSelectById" Method="ENTWFItemOwnerSelectById">
+    <Parameter Name="ENTWFItemOwnerId" Parameter="eNTWFItemOwnerId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistoryDelete" Method="ENTWFItemStateHistoryDelete">
+    <Parameter Name="ENTWFItemStateHistoryId" Parameter="eNTWFItemStateHistoryId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistoryInsert" Method="ENTWFItemStateHistoryInsert">
+    <Parameter Name="ENTWFItemStateHistoryId" Parameter="eNTWFItemStateHistoryId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistoryUpdate" Method="ENTWFItemStateHistoryUpdate">
+    <Parameter Name="ENTWFItemStateHistoryId" Parameter="eNTWFItemStateHistoryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistorySelectAll" Method="ENTWFItemStateHistorySelectAll">
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistorySelectById" Method="ENTWFItemStateHistorySelectById">
+    <Parameter Name="ENTWFItemStateHistoryId" Parameter="eNTWFItemStateHistoryId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerSelectByENTWFItemId" Method="ENTWFItemOwnerSelectByENTWFItemId">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID9" />
+  </Function>
+  <Function Name="dbo.HolidayDelete" Method="HolidayDelete">
+    <Parameter Name="HolidayId" Parameter="holidayId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HolidayInsert" Method="HolidayInsert">
+    <Parameter Name="HolidayId" Parameter="holidayId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="HolidayName" Parameter="holidayName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HolidayDate" Parameter="holidayDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HolidayUpdate" Method="HolidayUpdate">
+    <Parameter Name="HolidayId" Parameter="holidayId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HolidayName" Parameter="holidayName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HolidayDate" Parameter="holidayDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HolidaySelectAll" Method="HolidaySelectAll">
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.HolidaySelectById" Method="HolidaySelectById">
+    <Parameter Name="HolidayId" Parameter="holidayId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID11" />
+  </Function>
+  <Function Name="dbo.PTORequestDelete" Method="PTORequestDelete">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTORequestInsert" Method="PTORequestInsert">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RequestDate" Parameter="requestDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PTODayTypeId" Parameter="pTODayTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PTORequestTypeId" Parameter="pTORequestTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTORequestUpdate" Method="PTORequestUpdate">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RequestDate" Parameter="requestDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PTODayTypeId" Parameter="pTODayTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PTORequestTypeId" Parameter="pTORequestTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTORequestSelectAll" Method="PTORequestSelectAll">
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.PTORequestSelectById" Method="PTORequestSelectById">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.PTORequestSelectPreviousByENTUserAccountId" Method="PTORequestSelectPreviousByENTUserAccountId">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.PTODayTypeSelectAll" Method="PTODayTypeSelectAll">
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.PTODayTypeSelectById" Method="PTODayTypeSelectById">
+    <Parameter Name="PTODayTypeId" Parameter="pTODayTypeId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID13" />
+  </Function>
+  <Function Name="dbo.PTORequestTypeSelectAll" Method="PTORequestTypeSelectAll">
+    <ElementType IdRef="ID14" />
+  </Function>
+  <Function Name="dbo.PTORequestTypeSelectById" Method="PTORequestTypeSelectById">
+    <Parameter Name="PTORequestTypeId" Parameter="pTORequestTypeId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID14" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankDelete" Method="PTOVacationBankDelete">
+    <Parameter Name="PTOVacationBankId" Parameter="pTOVacationBankId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankInsert" Method="PTOVacationBankInsert">
+    <Parameter Name="PTOVacationBankId" Parameter="pTOVacationBankId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VacationYear" Parameter="vacationYear" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="PersonalDays" Parameter="personalDays" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="VacationDays" Parameter="vacationDays" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankUpdate" Method="PTOVacationBankUpdate">
+    <Parameter Name="PTOVacationBankId" Parameter="pTOVacationBankId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VacationYear" Parameter="vacationYear" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="PersonalDays" Parameter="personalDays" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="VacationDays" Parameter="vacationDays" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankSelectAll" Method="PTOVacationBankSelectAll">
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankSelectById" Method="PTOVacationBankSelectById">
+    <Parameter Name="PTOVacationBankId" Parameter="pTOVacationBankId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankIsDuplicate" Method="PTOVacationBankIsDuplicate">
+    <Parameter Name="PTOVacationBankId" Parameter="pTOVacationBankId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VacationYear" Parameter="vacationYear" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="PTOVacationBankIsDuplicateResult">
+      <Column Name="CountOfDuplicates" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PTOVacationBankSelectDistinctYears" Method="PTOVacationBankSelectDistinctYears">
+    <ElementType Name="PTOVacationBankSelectDistinctYearsResult">
+      <Column Name="VacationYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PTOVacationBankCopyYear" Method="PTOVacationBankCopyYear">
+    <Parameter Name="FromYear" Parameter="fromYear" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="ToYear" Parameter="toYear" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PTOVacationBankSelectByUserAccountIdYear" Method="PTOVacationBankSelectByUserAccountIdYear">
+    <Parameter Name="ENTUserAccountid" Parameter="eNTUserAccountid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VacationYear" Parameter="vacationYear" Type="System.Int16" DbType="SmallInt" />
+    <ElementType IdRef="ID15" />
+  </Function>
+  <Function Name="dbo.PTORequestSelectByENTUserAccountIdYear" Method="PTORequestSelectByENTUserAccountIdYear">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VacationYear" Parameter="vacationYear" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="PTORequestSelectByENTUserAccountIdYearResult">
+      <Column Name="CountOfFullVacation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountOfHalfVacation" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CountOfFullPersonal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountOfHalfPersonal" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CountOfFullUnpaid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountOfHalfUnPaid" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTWFItemStateHistorySelectByENTWFItemId" Method="ENTWFItemStateHistorySelectByENTWFItemId">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID10" />
+  </Function>
+  <Function Name="dbo.PTORequestSelectByENTUserAccountId" Method="PTORequestSelectByENTUserAccountId">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupDelete" Method="ENTWFOwnerGroupDelete">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupInsert" Method="ENTWFOwnerGroupInsert">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OwnerGroupName" Parameter="ownerGroupName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DefaultENTUserAccountId" Parameter="defaultENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsDefaultSameAsLast" Parameter="isDefaultSameAsLast" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupUpdate" Method="ENTWFOwnerGroupUpdate">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OwnerGroupName" Parameter="ownerGroupName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DefaultENTUserAccountId" Parameter="defaultENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsDefaultSameAsLast" Parameter="isDefaultSameAsLast" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupSelectAll" Method="ENTWFOwnerGroupSelectAll">
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupSelectByENTWorkflowId" Method="ENTWFOwnerGroupSelectByENTWorkflowId">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.ENTWFOwnerGroupSelectById" Method="ENTWFOwnerGroupSelectById">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID16" />
+  </Function>
+  <Function Name="dbo.ENTWFItemOwnerSelectLastUserByGroupId" Method="ENTWFItemOwnerSelectLastUserByGroupId">
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ENTWFItemOwnerSelectLastUserByGroupIdResult">
+      <Column Name="ENTUserAccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTWFItemDelete" Method="ENTWFItemDelete">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemInsert" Method="ENTWFItemInsert">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubmitterENTUserAccountId" Parameter="submitterENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CurrentWFStateId" Parameter="currentWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemUpdate" Method="ENTWFItemUpdate">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubmitterENTUserAccountId" Parameter="submitterENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CurrentWFStateId" Parameter="currentWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFItemSelectAll" Method="ENTWFItemSelectAll">
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.ENTWFItemSelectById" Method="ENTWFItemSelectById">
+    <Parameter Name="ENTWFItemId" Parameter="eNTWFItemId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.ENTWFItemSelectByItemId" Method="ENTWFItemSelectByItemId">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID17" />
+  </Function>
+  <Function Name="dbo.ENTWFStateDelete" Method="ENTWFStateDelete">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStateInsert" Method="ENTWFStateInsert">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StateName" Parameter="stateName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsOwnerSubmitter" Parameter="isOwnerSubmitter" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStateUpdate" Method="ENTWFStateUpdate">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StateName" Parameter="stateName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ENTWFOwnerGroupId" Parameter="eNTWFOwnerGroupId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsOwnerSubmitter" Parameter="isOwnerSubmitter" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFStateSelectAll" Method="ENTWFStateSelectAll">
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.ENTWFStateSelectByENTWorkflowId" Method="ENTWFStateSelectByENTWorkflowId">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.ENTWFStateSelectById" Method="ENTWFStateSelectById">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID18" />
+  </Function>
+  <Function Name="dbo.PTORequestUpdateCancelled" Method="PTORequestUpdateCancelled">
+    <Parameter Name="PTORequestId" Parameter="pTORequestId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cancelled" Parameter="cancelled" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFTransitionDelete" Method="ENTWFTransitionDelete">
+    <Parameter Name="ENTWFTransitionId" Parameter="eNTWFTransitionId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFTransitionInsert" Method="ENTWFTransitionInsert">
+    <Parameter Name="ENTWFTransitionId" Parameter="eNTWFTransitionId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TransitionName" Parameter="transitionName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromENTWFStateId" Parameter="fromENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToENTWFStateId" Parameter="toENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PostTransitionMethodName" Parameter="postTransitionMethodName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFTransitionUpdate" Method="ENTWFTransitionUpdate">
+    <Parameter Name="ENTWFTransitionId" Parameter="eNTWFTransitionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TransitionName" Parameter="transitionName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromENTWFStateId" Parameter="fromENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToENTWFStateId" Parameter="toENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PostTransitionMethodName" Parameter="postTransitionMethodName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWFTransitionSelectAll" Method="ENTWFTransitionSelectAll">
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.ENTWFTransitionSelectById" Method="ENTWFTransitionSelectById">
+    <Parameter Name="ENTWFTransitionId" Parameter="eNTWFTransitionId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID19" />
+  </Function>
+  <Function Name="dbo.ENTWFItemSelectByWorkflowId" Method="ENTWFItemSelectByWorkflowId">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ENTWFItemSelectByWorkflowIdResult">
+      <Column Name="CountOfWFItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PTORequestSelectByCurrentOwner" Method="PTORequestSelectByCurrentOwner">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWorkflowObjectName" Parameter="eNTWorkflowObjectName" Type="System.String" DbType="VarChar(255)" />
+    <ElementType IdRef="ID12" />
+  </Function>
+  <Function Name="dbo.ENTEmailDelete" Method="ENTEmailDelete">
+    <Parameter Name="ENTEmailId" Parameter="eNTEmailId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTEmailInsert" Method="ENTEmailInsert">
+    <Parameter Name="ENTEmailId" Parameter="eNTEmailId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ToEmailAddress" Parameter="toEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CCEmailAddress" Parameter="cCEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BCCEmailAddress" Parameter="bCCEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FromEmailAddress" Parameter="fromEmailAddress" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EmailStatusFlag" Parameter="emailStatusFlag" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTEmailUpdate" Method="ENTEmailUpdate">
+    <Parameter Name="ENTEmailId" Parameter="eNTEmailId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToEmailAddress" Parameter="toEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CCEmailAddress" Parameter="cCEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BCCEmailAddress" Parameter="bCCEmailAddress" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FromEmailAddress" Parameter="fromEmailAddress" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EmailStatusFlag" Parameter="emailStatusFlag" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTEmailSelectAll" Method="ENTEmailSelectAll">
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.ENTEmailSelectById" Method="ENTEmailSelectById">
+    <Parameter Name="ENTEmailId" Parameter="eNTEmailId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.ENTEmailSelectByEmailStatusFlag" Method="ENTEmailSelectByEmailStatusFlag">
+    <Parameter Name="EmailStatusFlag" Parameter="emailStatusFlag" Type="System.Byte" DbType="TinyInt" />
+    <ElementType IdRef="ID20" />
+  </Function>
+  <Function Name="dbo.ENTNotificationDelete" Method="ENTNotificationDelete">
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationInsert" Method="ENTNotificationInsert">
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FromEmailAddress" Parameter="fromEmailAddress" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationUpdate" Method="ENTNotificationUpdate">
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="FromEmailAddress" Parameter="fromEmailAddress" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationSelectAll" Method="ENTNotificationSelectAll">
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.ENTNotificationSelectById" Method="ENTNotificationSelectById">
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountDelete" Method="ENTNotificationENTUserAccountDelete">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountInsert" Method="ENTNotificationENTUserAccountInsert">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountUpdate" Method="ENTNotificationENTUserAccountUpdate">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountSelectAll" Method="ENTNotificationENTUserAccountSelectAll">
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountSelectById" Method="ENTNotificationENTUserAccountSelectById">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateDelete" Method="ENTNotificationENTWFStateDelete">
+    <Parameter Name="ENTNotificationENTWFStateId" Parameter="eNTNotificationENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateInsert" Method="ENTNotificationENTWFStateInsert">
+    <Parameter Name="ENTNotificationENTWFStateId" Parameter="eNTNotificationENTWFStateId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateUpdate" Method="ENTNotificationENTWFStateUpdate">
+    <Parameter Name="ENTNotificationENTWFStateId" Parameter="eNTNotificationENTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateSelectAll" Method="ENTNotificationENTWFStateSelectAll">
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateSelectById" Method="ENTNotificationENTWFStateSelectById">
+    <Parameter Name="ENTNotificationENTWFStateId" Parameter="eNTNotificationENTWFStateId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountSelectByENTUserAccountId" Method="ENTNotificationENTUserAccountSelectByENTUserAccountId">
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateSelectByENTNotificationENTUserAccountId" Method="ENTNotificationENTWFStateSelectByENTNotificationENTUserAccountId">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID23" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTWFStateDeleteByENTNotificationENTUserAccountId" Method="ENTNotificationENTWFStateDeleteByENTNotificationENTUserAccountId">
+    <Parameter Name="ENTNotificationENTUserAccountId" Parameter="eNTNotificationENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTNotificationSelectByIdENTUserAccountId" Method="ENTNotificationSelectByIdENTUserAccountId">
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTUserAccountid" Parameter="eNTUserAccountid" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID21" />
+  </Function>
+  <Function Name="dbo.ENTNotificationENTUserAccountSelectByENTWFStateId" Method="ENTNotificationENTUserAccountSelectByENTWFStateId">
+    <Parameter Name="ENTWFStateId" Parameter="eNTWFStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTNotificationId" Parameter="eNTNotificationId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID22" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowDelete" Method="ENTWorkflowDelete">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowInsert" Method="ENTWorkflowInsert">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="WorkflowName" Parameter="workflowName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENTWorkflowObjectName" Parameter="eNTWorkflowObjectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowUpdate" Method="ENTWorkflowUpdate">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WorkflowName" Parameter="workflowName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENTWorkflowObjectName" Parameter="eNTWorkflowObjectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowSelectAll" Method="ENTWorkflowSelectAll">
+    <ElementType IdRef="ID24" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowSelectById" Method="ENTWorkflowSelectById">
+    <Parameter Name="ENTWorkflowId" Parameter="eNTWorkflowId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID24" />
+  </Function>
+  <Function Name="dbo.ENTWorkflowSelectByObjectName" Method="ENTWorkflowSelectByObjectName">
+    <Parameter Name="ENTWorkflowObjectName" Parameter="eNTWorkflowObjectName" Type="System.String" DbType="VarChar(255)" />
+    <ElementType IdRef="ID24" />
+  </Function>
+  <Function Name="dbo.ReportRoleCapability" Method="ReportRoleCapability">
+    <ElementType Name="ReportRoleCapabilityResult">
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessFlag" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CapabilityName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ReportRoleUserAccount" Method="ReportRoleUserAccount">
+    <ElementType Name="ReportRoleUserAccountResult">
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ReportMyPTORequests" Method="ReportMyPTORequests">
+    <Parameter Name="ENTWorkflowObjectName" Parameter="eNTWorkflowObjectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ENTUserAccountId" Parameter="eNTUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ReportMyPTORequestsResult">
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PTODayTypeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PTORequestTypeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentState" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentOwnerLastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentOwnerFirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTReportDelete" Method="ENTReportDelete">
+    <Parameter Name="ENTReportId" Parameter="eNTReportId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTReportInsert" Method="ENTReportInsert">
+    <Parameter Name="ENTReportId" Parameter="eNTReportId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ReportName" Parameter="reportName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="SubReportObjectName" Parameter="subReportObjectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="SubReportMethodName" Parameter="subReportMethodName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTReportUpdate" Method="ENTReportUpdate">
+    <Parameter Name="ENTReportId" Parameter="eNTReportId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ReportName" Parameter="reportName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="SubReportObjectName" Parameter="subReportObjectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="SubReportMethodName" Parameter="subReportMethodName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTReportSelectAll" Method="ENTReportSelectAll">
+    <ElementType IdRef="ID25" />
+  </Function>
+  <Function Name="dbo.ENTReportSelectById" Method="ENTReportSelectById">
+    <Parameter Name="ENTReportId" Parameter="eNTReportId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID25" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectDelete" Method="ENTAuditObjectDelete">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertyDelete" Method="ENTAuditObjectPropertyDelete">
+    <Parameter Name="ENTAuditObjectPropertyId" Parameter="eNTAuditObjectPropertyId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertyInsert" Method="ENTAuditObjectPropertyInsert">
+    <Parameter Name="ENTAuditObjectPropertyId" Parameter="eNTAuditObjectPropertyId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertyUpdate" Method="ENTAuditObjectPropertyUpdate">
+    <Parameter Name="ENTAuditObjectPropertyId" Parameter="eNTAuditObjectPropertyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertySelectAll" Method="ENTAuditObjectPropertySelectAll">
+    <ElementType IdRef="ID26" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertySelectById" Method="ENTAuditObjectPropertySelectById">
+    <Parameter Name="ENTAuditObjectPropertyId" Parameter="eNTAuditObjectPropertyId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID26" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertyDeleteByENTAuditObjectId" Method="ENTAuditObjectPropertyDeleteByENTAuditObjectId">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectPropertySelectByENTAuditObjectId" Method="ENTAuditObjectPropertySelectByENTAuditObjectId">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID26" />
+  </Function>
+  <Function Name="dbo.ENTAuditDelete" Method="ENTAuditDelete">
+    <Parameter Name="ENTAuditId" Parameter="eNTAuditId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditInsert" Method="ENTAuditInsert">
+    <Parameter Name="ENTAuditId" Parameter="eNTAuditId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="RecordId" Parameter="recordId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="OldValue" Parameter="oldValue" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NewValue" Parameter="newValue" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="AuditType" Parameter="auditType" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditUpdate" Method="ENTAuditUpdate">
+    <Parameter Name="ENTAuditId" Parameter="eNTAuditId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="RecordId" Parameter="recordId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="OldValue" Parameter="oldValue" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NewValue" Parameter="newValue" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="AuditType" Parameter="auditType" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditSelectAll" Method="ENTAuditSelectAll">
+    <ElementType IdRef="ID27" />
+  </Function>
+  <Function Name="dbo.ENTAuditSelectById" Method="ENTAuditSelectById">
+    <Parameter Name="ENTAuditId" Parameter="eNTAuditId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID27" />
+  </Function>
+  <Function Name="dbo.ReportAudit" Method="ReportAudit">
+    <ElementType Name="ReportAuditResult">
+      <Column Name="ENTAuditId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="OldValue" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewValue" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AuditType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ENTAuditObjectInsert" Method="ENTAuditObjectInsert">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ObjectFullyQualifiedName" Parameter="objectFullyQualifiedName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="InsertENTUserAccountId" Parameter="insertENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectUpdate" Method="ENTAuditObjectUpdate">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ObjectFullyQualifiedName" Parameter="objectFullyQualifiedName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="UpdateENTUserAccountId" Parameter="updateENTUserAccountId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Version" Parameter="version" Type="System.Data.Linq.Binary" DbType="Timestamp" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectSelectAll" Method="ENTAuditObjectSelectAll">
+    <ElementType IdRef="ID28" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectSelectById" Method="ENTAuditObjectSelectById">
+    <Parameter Name="ENTAuditObjectId" Parameter="eNTAuditObjectId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID28" />
+  </Function>
+  <Function Name="dbo.ENTAuditObjectSelectByObjectName" Method="ENTAuditObjectSelectByObjectName">
+    <Parameter Name="ObjectName" Parameter="objectName" Type="System.String" DbType="VarChar(255)" />
+    <ElementType IdRef="ID28" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilitySelectAll" Method="ENTRoleCapabilitySelectAll">
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.ENTRoleCapabilitySelectById" Method="ENTRoleCapabilitySelectById">
+    <Parameter Name="ENTRoleCapabilityId" Parameter="eNTRoleCapabilityId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountSelectAll" Method="ENTRoleUserAccountSelectAll">
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.ENTRoleUserAccountSelectById" Method="ENTRoleUserAccountSelectById">
+    <Parameter Name="ENTRoleUserAccountId" Parameter="eNTRoleUserAccountId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID5" />
+  </Function>
+</Database>
